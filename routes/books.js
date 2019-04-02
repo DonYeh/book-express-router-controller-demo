@@ -7,18 +7,20 @@ const bookRoutes = Router();
 const {
     create,
     retrieveAll,
-    update, deleteOne
+    getByID,
+    update,
+    deleteOne
 } = require('../controllers/books');
 
 
 bookRoutes.get('/', retrieveAll);
 
-bookRoutes.get('/')
+bookRoutes.get('/:id', getByID);
 
-bookRoutes.post('/', create)
+bookRoutes.post('/', create);
 
-bookRoutes.put('/', update)
+bookRoutes.put('/', update);
 
-bookRoutes.delete('/', deleteOne)
+bookRoutes.delete('/', deleteOne);
 
 module.exports = bookRoutes;
